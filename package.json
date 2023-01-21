@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "build-css": "webpack --config ./css-lop/webpack.config.js",
-    "build-plugins": "webpack --config ./plugins/webpack.config.js"
+    "build-plugins": "webpack --config ./plugins/webpack.config.js",
+    "build-serv": "webpack-dev-server --config ./servidor/webpack.config.js",
+    "build-babel": "webpack --config ./moderno/webpack.config.js"
   },
   "keywords": [
     "webpack",
@@ -17,6 +19,9 @@
   "author": "Victor Rivero",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
