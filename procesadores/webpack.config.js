@@ -20,11 +20,40 @@ module.exports ={
 			{
 				test: /\.css$/,
 				use: [
+					'style-loader',
 					{
-						loader: MiniCSSExtractPlugin.loader
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1
+						}
 					},
-					'css-loader'
+					'postcss-loader'
 				]
+			},
+			{
+				test: /\.less$/,
+				use: [
+					'style-loader',
+					'css-loader',
+					'less-loader'
+				]
+			},
+			{
+				test: /\.styl$/,
+				use: [
+					'style-loader',
+					'css-loader',
+					'stylus-loader'
+				]
+			},
+			{
+				test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webp$/,
+				use: {
+					loader: 'url-loader',
+					options: {
+						limit: 900000,
+					}
+				}
 			},
 			{
 				test: /\.js$/,
@@ -35,10 +64,8 @@ module.exports ={
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title :'Pruebas'
+			title :'Pruebas',
+			template: path.resolve(__dirname,'index.html')
 		}),
-		new MiniCSSExtractPlugin({
-			filename: 'css/[name].css'
-		})
 	]
 }

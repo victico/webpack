@@ -27,6 +27,15 @@ module.exports ={
 				]
 			},
 			{
+				test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webp$/,
+				use: {
+					loader: 'url-loader',
+					options: {
+						limit: 900000,
+					}
+				}
+			},
+			{
 				test: /\.js$/,
 				use: 'babel-loader',
 				exclude: /node_modules/,
@@ -35,7 +44,8 @@ module.exports ={
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title :'Pruebas'
+			title :'Pruebas',
+			template: path.resolve(__dirname,'index.html')
 		}),
 		new MiniCSSExtractPlugin({
 			filename: 'css/[name].css'

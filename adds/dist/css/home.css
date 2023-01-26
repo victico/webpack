@@ -1,0 +1,10 @@
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./css/style.css ***!
+  \*****************************************************************/
+body{
+	background-color: skyblue;
+	color: darkblue;
+	font-family: 'Arial';
+	margin: 0;
+	text-align: center;
+}

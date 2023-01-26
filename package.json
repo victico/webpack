@@ -8,7 +8,14 @@
     "build-css": "webpack --config ./css-lop/webpack.config.js",
     "build-plugins": "webpack --config ./plugins/webpack.config.js",
     "build-serv": "webpack-dev-server --config ./servidor/webpack.config.js",
-    "build-babel": "webpack --config ./moderno/webpack.config.js"
+    "build-babel": "webpack-dev-server --config ./moderno/webpack.config.js",
+    "build-jxs": "webpack --config ./jxs/webpack.config.js",
+    "build-react": "webpack --config ./react/webpack.config.js",
+    "build-adds": "webpack --config ./adds/webpack.config.js",
+    "build-sop": "webpack --config ./procesadores/webpack.config.js",
+    "build-avanz": "webpack --config ./avanz/webpack.config.js",
+    "build-dym-sync": "webpack --config ./dym/webpack.dll.config.js",
+    "build-dym": "webpack --config ./dym/webpack.config.js"
   },
   "keywords": [
     "webpack",
@@ -20,13 +27,31 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^6.7.3",
+    "file-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "less": "^4.1.3",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "node-sass": "^8.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "sass-loader": "^7.3.1",
     "style-loader": "^3.3.1",
+    "stylus": "^0.59.0",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^1.1.2",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
